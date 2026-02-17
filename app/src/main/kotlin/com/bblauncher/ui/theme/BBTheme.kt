@@ -13,10 +13,10 @@ object BBTheme {
 
     // -- Status bar --
     val statusBarGradient = Brush.verticalGradient(
-        colors = listOf(Color(0xFF1A1A1A), Color(0xFF2D2D2D)),
+        colors = listOf(Color(0x99000000), Color(0x66000000)),  // semi-transparent black
     )
-    val statusBarHeight = 48.dp       // two rows × ~24dp
-    val statusBarDividerColor = Color(0xFF555555)  // metallic 1dp line
+    val statusBarHeight = 56.dp       // taller row 1 + compact row 2
+    val statusBarDividerColor = Color(0x88555555)  // semi-transparent metallic line
 
     // -- Tab bar --
     val tabBarBackground = Color(0xCC222222.toInt()) // ~80% opaque dark
@@ -27,7 +27,7 @@ object BBTheme {
 
     // -- Icon tray --
     val trayBackground = Color(0xCC111111.toInt())   // ~80% opaque near-black
-    val trayCollapsedHeight = 180.dp  // ~2 rows of icons when collapsed
+    val trayCollapsedHeight = 84.dp   // single row of icons when collapsed (matches BB OS 7)
     val trayColumns = 6
 
     // -- App icons --

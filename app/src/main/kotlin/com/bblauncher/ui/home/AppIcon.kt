@@ -39,6 +39,7 @@ import com.bblauncher.util.rememberDrawablePainter
 fun AppIcon(
     appInfo: AppInfo,
     onClick: () -> Unit,
+    showLabel: Boolean = true,
     modifier: Modifier = Modifier,
 ) {
     Column(
@@ -83,22 +84,24 @@ fun AppIcon(
             )
         }
 
-        // Label below the icon
-        Text(
-            text = appInfo.label,
-            style = TextStyle(
-                color = BBTheme.labelColor,
-                fontSize = BBTheme.labelSize,
-                shadow = Shadow(
-                    color = BBTheme.labelShadowColor,
-                    offset = Offset(1f, 1f),
-                    blurRadius = BBTheme.labelShadowRadius,
+        // Label below the icon (hidden in collapsed dock mode)
+        if (showLabel) {
+            Text(
+                text = appInfo.label,
+                style = TextStyle(
+                    color = BBTheme.labelColor,
+                    fontSize = BBTheme.labelSize,
+                    shadow = Shadow(
+                        color = BBTheme.labelShadowColor,
+                        offset = Offset(1f, 1f),
+                        blurRadius = BBTheme.labelShadowRadius,
+                    ),
                 ),
-            ),
-            textAlign = TextAlign.Center,
-            maxLines = 1,
-            overflow = TextOverflow.Ellipsis,
-            modifier = Modifier.padding(top = 2.dp),
-        )
+                textAlign = TextAlign.Center,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                modifier = Modifier.padding(top = 2.dp),
+            )
+        }
     }
 }

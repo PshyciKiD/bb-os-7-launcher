@@ -66,6 +66,7 @@ fun AppIconTray(
                 AppIcon(
                     appInfo = app,
                     onClick = { onAppClick(app) },
+                    showLabel = isExpanded,
                 )
             }
         }
