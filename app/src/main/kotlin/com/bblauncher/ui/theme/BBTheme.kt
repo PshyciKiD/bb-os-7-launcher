@@ -31,7 +31,7 @@ object BBTheme {
     val trayColumns = 6
 
     // -- App icons --
-    val iconSize = 48.dp
+    val iconSize = 62.dp
     val iconCornerRadius = 12.dp
     val iconShadowOffset = 2.dp
     val iconShadowBlur = 4.dp

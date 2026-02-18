@@ -31,6 +31,12 @@
             pkgs.jdk17
             androidSdk
             pkgs.gradle
+
+            # Firmware icon extraction tools
+            pkgs.p7zip        # Extract .exe self-extracting archives
+            pkgs.unshield     # Extract InstallShield .cab archives
+            pkgs.imagemagick  # Identify, convert, resize PNGs
+            pkgs.file         # Identify file types in extracted blobs
           ];
 
           # Point Gradle/AGP at the Nix-managed SDK

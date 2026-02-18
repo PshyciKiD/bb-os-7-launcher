@@ -1,20 +1,15 @@
 package com.bblauncher.ui.home
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.focusable
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.input.key.Key
@@ -32,7 +27,8 @@ import com.bblauncher.ui.theme.BBTheme
 import com.bblauncher.util.rememberDrawablePainter
 
 /**
- * Skeuomorphic app icon with drop shadow, specular highlight, and text label.
+ * App icon composable — renders the icon at full dock-row height with a label below.
+ * No artificial overlays; BB7 theme icons already have gloss and shape baked in.
  * Supports both tap and trackpad center-click (DPAD_CENTER) to launch.
  */
 @Composable
@@ -45,7 +41,7 @@ fun AppIcon(
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
-            .padding(horizontal = 4.dp, vertical = 6.dp)
+            .padding(horizontal = 4.dp, vertical = 4.dp)
             .focusable()
             .clickable(onClick = onClick)
             // Trackpad center-click launches the app
@@ -58,31 +54,13 @@ fun AppIcon(
                 }
             },
     ) {
-        // Icon with drop shadow + specular highlight
-        Box {
-            val shape = RoundedCornerShape(BBTheme.iconCornerRadius)
-
-            Image(
-                painter = rememberDrawablePainter(appInfo.icon),
-                contentDescription = appInfo.label,
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .size(BBTheme.iconSize)
-                    .shadow(
-                        elevation = BBTheme.iconShadowBlur,
-                        shape = shape,
-                    )
-                    .clip(shape),
-            )
-
-            // Specular highlight overlay — top-half white→transparent
-            Box(
-                modifier = Modifier
-                    .size(BBTheme.iconSize)
-                    .clip(shape)
-                    .background(BBTheme.iconHighlightBrush),
-            )
-        }
+        // Icon — no border, shadow, or clip; rendered at native aspect ratio
+        Image(
+            painter = rememberDrawablePainter(appInfo.icon),
+            contentDescription = appInfo.label,
+            contentScale = ContentScale.Fit,
+            modifier = Modifier.size(BBTheme.iconSize),
+        )
 
         // Label below the icon (hidden in collapsed dock mode)
         if (showLabel) {

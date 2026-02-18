@@ -13,7 +13,8 @@ import com.bblauncher.viewmodel.LauncherViewModel
 
 /**
  * Top-level orchestrator composable.
- * Connects [LauncherViewModel] state to the [HomeScreen] UI.
+ * Connects [LauncherViewModel] state to the [HomeScreen] UI,
+ * including icon pack picker state.
  */
 @Composable
 fun BBLauncherRoot(
@@ -32,6 +33,11 @@ fun BBLauncherRoot(
     val trayExpanded by viewModel.trayExpanded.collectAsStateWithLifecycle()
     val searchQuery by viewModel.searchQuery.collectAsStateWithLifecycle()
 
+    // Icon pack state
+    val showIconPackPicker by viewModel.showIconPackPicker.collectAsStateWithLifecycle()
+    val availablePacks by viewModel.availablePacks.collectAsStateWithLifecycle()
+    val activeIconPack by viewModel.activeIconPack.collectAsStateWithLifecycle()
+
     HomeScreen(
         currentTime = currentTime,
         batteryLevel = batteryLevel,
@@ -39,6 +45,9 @@ fun BBLauncherRoot(
         apps = filteredApps,
         trayExpanded = trayExpanded,
         searchQuery = searchQuery,
+        showIconPackPicker = showIconPackPicker,
+        availablePacks = availablePacks,
+        activeIconPack = activeIconPack,
         onTabSelected = viewModel::selectTab,
         onTrayExpandChange = viewModel::setTrayExpanded,
         onAppClick = { appInfo ->
@@ -50,6 +59,9 @@ fun BBLauncherRoot(
             }
             context.startActivity(intent)
         },
+        onIconPackPickerRequested = viewModel::requestIconPackPicker,
+        onIconPackPickerDismissed = viewModel::dismissIconPackPicker,
+        onIconPackSelected = viewModel::setIconPack,
         modifier = modifier,
     )
 }

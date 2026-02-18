@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Built-in BB OS 7 icon mappings (extracted from simulator theme).
+        These override system icons automatically (no icon pack needed).
+    -->
+
+    <!-- Browser -->
+    <item component="ComponentInfo{com.android.chrome/com.google.android.apps.chrome.Main}" drawable="bb_internet" />
+    <item component="ComponentInfo{org.mozilla.firefox/org.mozilla.fenix.IntentReceiverActivity}" drawable="bb_internet" />
+    <item component="ComponentInfo{com.sec.android.app.sbrowser/com.sec.android.app.sbrowser.SBrowserMainActivity}" drawable="bb_internet" />
+    <item component="ComponentInfo{com.opera.browser/com.opera.android.BrowserActivity}" drawable="bb_internet" />
+    <item component="ComponentInfo{com.brave.browser/com.brave.browser.BraveActivity}" drawable="bb_internet" />
+
+    <!-- Messaging / SMS -->
+    <item component="ComponentInfo{com.google.android.apps.messaging/com.google.android.apps.messaging.ui.ConversationListActivity}" drawable="bb_messaging" />
+    <item component="ComponentInfo{com.android.mms/com.android.mms.ui.ConversationList}" drawable="bb_messaging" />
+    <item component="ComponentInfo{com.samsung.android.messaging/com.samsung.android.messaging.ui.view.setting.MainSettingActivity}" drawable="bb_messaging" />
+    <item component="ComponentInfo{com.discord/com.discord.main.MainDefault}" drawable="bb_messaging" />
+
+    <!-- Email -->
+    <item component="ComponentInfo{com.google.android.gm/com.google.android.gm.ConversationListActivityGmail}" drawable="bb_email" />
+    <item component="ComponentInfo{com.microsoft.office.outlook/com.microsoft.office.outlook.MainActivity}" drawable="bb_email" />
+    <item component="ComponentInfo{com.samsung.android.email.provider/com.samsung.android.email.ui.activity.EmailActivity}" drawable="bb_email" />
+
+    <!-- Calendar -->
+    <item component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="bb_calendar" />
+    <item component="ComponentInfo{com.samsung.android.calendar/com.android.calendar.AllInOneActivity}" drawable="bb_calendar" />
+
+    <!-- Contacts -->
+    <item component="ComponentInfo{com.google.android.contacts/com.android.contacts.activities.PeopleActivity}" drawable="bb_contacts" />
+    <item component="ComponentInfo{com.samsung.android.contacts/com.samsung.android.contacts.ContactsActivity}" drawable="bb_contacts" />
+
+    <!-- Photos / Gallery -->
+    <item component="ComponentInfo{com.google.android.apps.photos/com.google.android.apps.photos.home.HomeActivity}" drawable="bb_photos" />
+    <item component="ComponentInfo{com.google.android.apps.photosgo/com.google.android.apps.photosgo.home.HomeActivity}" drawable="bb_photos" />
+    <item component="ComponentInfo{com.sec.android.gallery3d/com.samsung.android.gallery.app.activity.GalleryActivity}" drawable="bb_photos" />
+
+    <!-- Settings -->
+    <item component="ComponentInfo{com.android.settings/com.android.settings.Settings}" drawable="bb_settings" />
+
+    <!-- Phone / Dialer -->
+    <item component="ComponentInfo{com.google.android.dialer/com.google.android.dialer.extensions.GoogleDialtactsActivity}" drawable="bb_phone" />
+    <item component="ComponentInfo{com.android.dialer/com.android.dialer.DialtactsActivity}" drawable="bb_phone" />
+    <item component="ComponentInfo{com.samsung.android.dialer/com.samsung.android.dialer.DialtactsActivity}" drawable="bb_phone" />
+    <item component="ComponentInfo{com.google.android.apps.tachyon/com.google.android.apps.tachyon.MainActivity}" drawable="bb_phone" />
+
+    <!-- Camera -->
+    <item component="ComponentInfo{com.android.camera2/com.android.camera.CameraLauncher}" drawable="bb_camera" />
+    <item component="ComponentInfo{com.android.camera/com.android.camera.Camera}" drawable="bb_camera" />
+    <item component="ComponentInfo{com.google.android.GoogleCamera/com.android.camera.CameraLauncher}" drawable="bb_camera" />
+    <item component="ComponentInfo{com.samsung.android.camera/com.samsung.android.camera.CameraApp}" drawable="bb_camera" />
+    <item component="ComponentInfo{com.mediatek.camera/com.mediatek.camera.CameraLauncher}" drawable="bb_camera" />
+
+    <!-- Calculator -->
+    <item component="ComponentInfo{com.google.android.calculator/com.android.calculator2.Calculator}" drawable="bb_calculator" />
+    <item component="ComponentInfo{com.android.calculator2/com.android.calculator2.Calculator}" drawable="bb_calculator" />
+    <item component="ComponentInfo{com.sec.android.app.popupcalculator/com.sec.android.app.popupcalculator.Calculator}" drawable="bb_calculator" />
+
+    <!-- Clock / Alarm -->
+    <item component="ComponentInfo{com.google.android.deskclock/com.android.deskclock.DeskClock}" drawable="bb_clock" />
+    <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.DeskClock}" drawable="bb_clock" />
+    <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.ClockPackage}" drawable="bb_clock" />
+
+    <!-- Maps / Navigation -->
+    <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.MapsActivity}" drawable="bb_maps" />
+    <item component="ComponentInfo{com.waze/com.waze.FreedriveActivity}" drawable="bb_maps" />
+
+    <!-- Music -->
+    <item component="ComponentInfo{com.google.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="bb_music" />
+    <item component="ComponentInfo{com.spotify.music/com.spotify.music.MainActivity}" drawable="bb_music" />
+    <item component="ComponentInfo{com.samsung.android.app.music/com.sec.android.app.music.MusicActionTabActivity}" drawable="bb_music" />
+
+    <!-- Video -->
+    <item component="ComponentInfo{com.google.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="bb_video" />
+    <item component="ComponentInfo{com.google.android.videos/com.google.android.videos.GoogleTvEntryPoint}" drawable="bb_video" />
+
+    <!-- Files / File Manager -->
+    <item component="ComponentInfo{com.google.android.documentsui/com.android.documentsui.LauncherActivity}" drawable="bb_filemanager" />
+    <item component="ComponentInfo{com.android.documentsui/com.android.documentsui.LauncherActivity}" drawable="bb_filemanager" />
+    <item component="ComponentInfo{com.google.android.apps.nbu.files/com.google.android.apps.nbu.files.home.HomeActivity}" drawable="bb_filemanager" />
+
+    <!-- Notes -->
+    <item component="ComponentInfo{com.google.android.keep/com.google.android.keep.activities.BrowseActivity}" drawable="bb_notes" />
+    <item component="ComponentInfo{com.samsung.android.app.notes/com.samsung.android.app.notes.memolist.MemoListActivity}" drawable="bb_notes" />
+
+    <!-- Documents -->
+    <item component="ComponentInfo{com.google.android.apps.docs/com.google.android.apps.docs.app.NewMainProxyActivity}" drawable="bb_documents" />
+
+    <!-- Search -->
+    <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.SearchActivity}" drawable="bb_search" />
+    <item component="ComponentInfo{com.google.android.apps.googleassistant/com.google.android.apps.googleassistant.AssistantActivity}" drawable="bb_search" />
+
+    <!-- Play Store / Games -->
+    <item component="ComponentInfo{com.android.vending/com.android.vending.AssetBrowserActivity}" drawable="bb_games" />
+    <item component="ComponentInfo{com.google.android.play.games/com.google.android.gms.games.ui.destination.main.MainActivity}" drawable="bb_games" />
+
+    <!-- FM Radio / Audio -->
+    <item component="ComponentInfo{com.android.fmradio/com.android.fmradio.FmMainActivity}" drawable="bb_headphones" />
+    <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.SoundRecorder}" drawable="bb_headphones" />
+
+    <!-- SIM Toolkit -->
+    <item component="ComponentInfo{com.android.stk/com.android.stk.StkMain}" drawable="bb7_0792" />
+</resources>

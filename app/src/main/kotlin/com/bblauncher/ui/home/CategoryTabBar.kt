@@ -1,7 +1,8 @@
 package com.bblauncher.ui.home
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -21,12 +22,15 @@ import com.bblauncher.viewmodel.Tab
 
 /**
  * Horizontal tab bar: "Frequent" | "All" | "Favorites".
+ * Long-press opens the icon pack picker.
  * In MVP only "All" is functional — the others are visible but do nothing special.
  */
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun CategoryTabBar(
     selectedTab: Tab,
     onTabSelected: (Tab) -> Unit,
+    onLongPress: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Row(
@@ -50,7 +54,10 @@ fun CategoryTabBar(
                             Modifier
                         },
                     )
-                    .clickable { onTabSelected(tab) }
+                    .combinedClickable(
+                        onClick = { onTabSelected(tab) },
+                        onLongClick = onLongPress,
+                    )
                     .padding(horizontal = 16.dp, vertical = 4.dp),
                 contentAlignment = Alignment.Center,
             ) {
