@@ -45,6 +45,7 @@ fun HomeScreen(
     currentTime: Long,
     batteryLevel: Int,
     selectedTab: Tab,
+    dockApps: List<AppInfo>,
     apps: List<AppInfo>,
     trayExpanded: Boolean,
     searchQuery: String,
@@ -103,15 +104,17 @@ fun HomeScreen(
             }
         }
 
-        // Category tab bar — long-press opens icon pack picker
+        // Category tab bar — tap active tab to toggle drawer, long-press for icon pack picker
         CategoryTabBar(
             selectedTab = selectedTab,
             onTabSelected = onTabSelected,
+            onToggleDrawer = { onTrayExpandChange(!trayExpanded) },
             onLongPress = onIconPackPickerRequested,
         )
 
-        // Icon tray
+        // Icon tray — dock row shown when collapsed, full grid when expanded
         AppIconTray(
+            dockApps = dockApps,
             apps = apps,
             isExpanded = trayExpanded,
             maxHeight = maxTrayHeight,

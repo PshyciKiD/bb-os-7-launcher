@@ -30,6 +30,7 @@ import com.bblauncher.viewmodel.Tab
 fun CategoryTabBar(
     selectedTab: Tab,
     onTabSelected: (Tab) -> Unit,
+    onToggleDrawer: () -> Unit,
     onLongPress: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -55,7 +56,14 @@ fun CategoryTabBar(
                         },
                     )
                     .combinedClickable(
-                        onClick = { onTabSelected(tab) },
+                        onClick = {
+                            if (isSelected) {
+                                // Re-tap on active tab toggles the drawer
+                                onToggleDrawer()
+                            } else {
+                                onTabSelected(tab)
+                            }
+                        },
                         onLongClick = onLongPress,
                     )
                     .padding(horizontal = 16.dp, vertical = 4.dp),

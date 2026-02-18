@@ -80,12 +80,12 @@
     <item component="ComponentInfo{com.android.documentsui/com.android.documentsui.LauncherActivity}" drawable="bb_filemanager" />
     <item component="ComponentInfo{com.google.android.apps.nbu.files/com.google.android.apps.nbu.files.home.HomeActivity}" drawable="bb_filemanager" />
 
-    <!-- Notes -->
+    <!-- Notes / Memo -->
     <item component="ComponentInfo{com.google.android.keep/com.google.android.keep.activities.BrowseActivity}" drawable="bb_notes" />
     <item component="ComponentInfo{com.samsung.android.app.notes/com.samsung.android.app.notes.memolist.MemoListActivity}" drawable="bb_notes" />
 
-    <!-- Documents -->
-    <item component="ComponentInfo{com.google.android.apps.docs/com.google.android.apps.docs.app.NewMainProxyActivity}" drawable="bb_documents" />
+    <!-- Documents — no matching BB7 icon found yet -->
+    <!-- <item component="ComponentInfo{com.google.android.apps.docs/com.google.android.apps.docs.app.NewMainProxyActivity}" drawable="bb_documents" /> -->
 
     <!-- Search -->
     <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.SearchActivity}" drawable="bb_search" />
@@ -95,9 +95,9 @@
     <item component="ComponentInfo{com.android.vending/com.android.vending.AssetBrowserActivity}" drawable="bb_games" />
     <item component="ComponentInfo{com.google.android.play.games/com.google.android.gms.games.ui.destination.main.MainActivity}" drawable="bb_games" />
 
-    <!-- FM Radio / Audio -->
-    <item component="ComponentInfo{com.android.fmradio/com.android.fmradio.FmMainActivity}" drawable="bb_headphones" />
-    <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.SoundRecorder}" drawable="bb_headphones" />
+    <!-- FM Radio / Audio — no matching BB7 icon found yet -->
+    <!-- <item component="ComponentInfo{com.android.fmradio/com.android.fmradio.FmMainActivity}" drawable="bb_headphones" /> -->
+    <!-- <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.SoundRecorder}" drawable="bb_headphones" /> -->
 
     <!-- SIM Toolkit -->
     <item component="ComponentInfo{com.android.stk/com.android.stk.StkMain}" drawable="bb7_0792" />

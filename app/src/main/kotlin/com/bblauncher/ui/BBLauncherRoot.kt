@@ -33,6 +33,9 @@ fun BBLauncherRoot(
     val trayExpanded by viewModel.trayExpanded.collectAsStateWithLifecycle()
     val searchQuery by viewModel.searchQuery.collectAsStateWithLifecycle()
 
+    // Dock apps (pinned BB7 default row)
+    val dockApps by viewModel.dockApps.collectAsStateWithLifecycle()
+
     // Icon pack state
     val showIconPackPicker by viewModel.showIconPackPicker.collectAsStateWithLifecycle()
     val availablePacks by viewModel.availablePacks.collectAsStateWithLifecycle()
@@ -42,6 +45,7 @@ fun BBLauncherRoot(
         currentTime = currentTime,
         batteryLevel = batteryLevel,
         selectedTab = selectedTab,
+        dockApps = dockApps,
         apps = filteredApps,
         trayExpanded = trayExpanded,
         searchQuery = searchQuery,

@@ -24,6 +24,26 @@ private const val PREFS_NAME = "bblauncher_prefs"
 private const val KEY_ICON_PACK = "icon_pack"
 
 /**
+ * Default dock pinned apps — mirrors the BB OS 7 default home screen row:
+ * Mail, SMS, Contacts, Browser, Media (Files), Calendar.
+ * Each entry is a package name; first installed match wins.
+ */
+private val DEFAULT_DOCK_PACKAGES = listOf(
+    // Mail
+    listOf("com.google.android.gm", "com.microsoft.office.outlook", "com.samsung.android.email.provider"),
+    // SMS / Messaging
+    listOf("com.google.android.apps.messaging", "com.android.mms", "com.samsung.android.messaging"),
+    // Contacts
+    listOf("com.google.android.contacts", "com.samsung.android.contacts"),
+    // Browser
+    listOf("com.android.chrome", "org.mozilla.firefox", "com.sec.android.app.sbrowser"),
+    // Media / Files
+    listOf("com.google.android.apps.nbu.files", "com.google.android.documentsui", "com.android.documentsui"),
+    // Calendar
+    listOf("com.google.android.calendar", "com.samsung.android.calendar"),
+)
+
+/**
  * Central state holder for the launcher.
  * Loads apps from [AppRepository] and exposes reactive state for the UI.
  * Manages icon pack selection, discovery, and persistence.
@@ -36,6 +56,13 @@ class LauncherViewModel(application: Application) : AndroidViewModel(application
 
     /** All launchable apps on the device. */
     private val _allApps = MutableStateFlow<List<AppInfo>>(emptyList())
+
+    /**
+     * Dock row apps — resolved from [DEFAULT_DOCK_PACKAGES] against installed apps.
+     * Preserves the BB7 default order: Mail, SMS, Contacts, Browser, Media, Calendar.
+     */
+    private val _dockApps = MutableStateFlow<List<AppInfo>>(emptyList())
+    val dockApps: StateFlow<List<AppInfo>> = _dockApps.asStateFlow()
 
     /** Currently selected category tab. */
     private val _selectedTab = MutableStateFlow(Tab.All)
@@ -84,7 +111,9 @@ class LauncherViewModel(application: Application) : AndroidViewModel(application
         iconResolver.setActivePack(savedPack)
 
         viewModelScope.launch {
-            _allApps.value = repository.loadApps()
+            val apps = repository.loadApps()
+            _allApps.value = apps
+            _dockApps.value = resolveDock(apps)
         }
 
         // Discover available icon packs in the background
@@ -132,7 +161,17 @@ class LauncherViewModel(application: Application) : AndroidViewModel(application
 
         // Reload apps with new icons
         viewModelScope.launch {
-            _allApps.value = repository.loadApps()
+            val apps = repository.loadApps()
+            _allApps.value = apps
+            _dockApps.value = resolveDock(apps)
+        }
+    }
+
+    /** Resolves the pinned dock row from the loaded app list. */
+    private fun resolveDock(apps: List<AppInfo>): List<AppInfo> {
+        val appsByPkg = apps.associateBy { it.packageName }
+        return DEFAULT_DOCK_PACKAGES.mapNotNull { candidates ->
+            candidates.firstNotNullOfOrNull { appsByPkg[it] }
         }
     }
 
