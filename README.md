@@ -19,7 +19,7 @@ A BlackBerry OS 7-inspired Android launcher for the Zinwa Q25 (and other Android
 - **Pinned Dock Row** -- Default dock mirrors the BB7 home screen: Mail, SMS, Contacts, Browser, Media, Calendar
 - **App Drawer** -- Swipe up or tap the active tab to expand the full app grid; swipe down or tap again to collapse
 - **Category Tabs** -- Frequent / All / Favorites tab bar (All is functional; others are placeholders)
-- **Authentic BB7 Icons** -- 136 icons extracted from the BlackBerry 7.1 simulator theme (`net_rim_theme_BlackBerry7_480x640_t.cod`), with 25 mapped to common Android apps via `appfilter.xml`
+- **Authentic BB7 Icons** -- 136 icons extracted from the BlackBerry 7.1 simulator theme, with 25 mapped to common Android apps via `appfilter.xml`
 - **Icon Pack Resolver** -- Three-tier icon resolution chain: built-in BB7 theme -> external icon pack -> system default. Long-press the tab bar to open the icon pack picker
 - **Physical Keyboard Search** -- Start typing to filter apps by name (designed for the Q25's hardware keyboard)
 
