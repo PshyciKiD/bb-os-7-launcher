@@ -1,6 +1,6 @@
 # BB OS 7 Launcher
 
-A BlackBerry OS 7-inspired Android launcher for the BlackBerry Q25 (and other Android devices). Brings back the classic BB experience with authentic icons and layout.
+A BlackBerry OS 7-inspired Android launcher for the Zinwa Q25 (and other Android devices). Brings back the classic BB experience with authentic icons and layout.
 
 > [!TIP]
 > Contributions welcome! If you want to make this better, please do. All PRs welcome and accepted.
@@ -9,6 +9,9 @@ A BlackBerry OS 7-inspired Android launcher for the BlackBerry Q25 (and other An
 > This project is far from complete or usable. It is vibe coded with Claude Code without much code review. 
 
 ![Android](https://img.shields.io/badge/Android-14+-green) ![Kotlin](https://img.shields.io/badge/Kotlin-Jetpack%20Compose-purple)
+
+![IMG_1118 Medium](https://github.com/user-attachments/assets/59ee344d-b959-4e3d-bc96-3ed6e7e6e05e)
+
 
 ## Features
 
